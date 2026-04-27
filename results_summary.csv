@@ -1,0 +1,13 @@
+model,question_type,n,baseline_acc,revised_acc,improvement,pct_improved,pct_worsened,pct_unchanged
+Qwen2VL,maximum,80,0.0,0.0,0.0,0.0,0.0,100.0
+Qwen2VL,mean,80,0.1125,0.15,0.03749999999999999,6.25,2.5,91.25
+Qwen2VL,median,80,0.0,0.175,0.175,17.5,0.0,82.5
+Qwen2VL,minimum,80,0.3625,0.3,-0.0625,5.0,11.25,83.75
+Qwen2VL,nbars,80,0.1375,0.1375,0.0,0.0,0.0,100.0
+Qwen2VL,ngaussians,80,0.0125,0.2625,0.25,25.0,0.0,75.0
+LLaVA,maximum,80,0.0375,0.0,-0.0375,0.0,3.75,96.25
+LLaVA,mean,80,0.0,0.0125,0.0125,1.25,0.0,98.75
+LLaVA,median,80,0.0,0.0125,0.0125,1.25,0.0,98.75
+LLaVA,minimum,80,0.0375,0.0125,-0.024999999999999998,0.0,2.5,97.5
+LLaVA,nbars,80,0.0,0.0,0.0,0.0,0.0,100.0
+LLaVA,ngaussians,80,0.0125,0.15,0.13749999999999998,15.0,1.25,83.75
