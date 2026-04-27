@@ -1,0 +1,9 @@
+Metadata-Version: 2.4
+Name: dentist
+Version: 0.1
+Summary: Python Package
+Author: ZXP CY
+Author-email: 89253033@qq.com
+Dynamic: author
+Dynamic: author-email
+Dynamic: summary
