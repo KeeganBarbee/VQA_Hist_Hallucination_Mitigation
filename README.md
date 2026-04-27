@@ -1,2 +1,2 @@
 # VQA_Hist_Hallucination_Mitigation
-This is a repository documenting my work for my independent study research on hallucination mitigation for histograms.
+This is a repository documenting my work for my independent study research on hallucination mitigation for histograms. It is important to note that not all of this code is uniquely mine. Some of it is uniquely mine, some was not used when running the actual models, and some of it had significant changes for my specific situation. Here, I will cite the paper where I found the code.
