@@ -199,3 +199,6 @@ Conflict (yes/no):
             )[0]
             result.append({"question": question, "answer": answer})
         return result
+"""
+Inspired by Chang, Yue, et al. "A unified hallucination mitigation framework for large vision-language models." arXiv preprint arXiv:2409.16494 (2024).
+"""
