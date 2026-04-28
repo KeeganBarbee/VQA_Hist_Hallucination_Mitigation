@@ -53,18 +53,7 @@ Histograms present a unique challenge for VLMs:
 | `maximum` | Maximum value on the x-axis? | Relative error |
 | `median` | Median value of the data? | Relative error |
 | `mean` | Mean value of the data? | Relative error |
- 
----
- 
-## Models
- 
-Both models served locally via [Ollama](https://ollama.com) at `http://localhost:11434`:
- 
-| Model | Tag | Parameters | Quantization |
-|---|---|---|---|
-| LLaVA | `llava:7b` | 7B | Q4_0 |
-| Qwen2.5-VL | `qwen2.5vl:7b` | 8.3B | Q4_K_M |
- 
+
 ---
  
 ## Project Structure
@@ -226,18 +215,6 @@ Qwen2VL (n=N):
   unchanged   :   XX (XX.X%)
   worsened    :   XX (XX.X%)
 ```
- 
-### Metrics
- 
-| Metric | Applied To | Description |
-|---|---|---|
-| Exact Match | `nbars`, `ngaussians` | Answer must match ground truth exactly |
-| Relative Error ≤ 20% | Numerical types | Strict threshold |
-| Relative Error ≤ 50% | Numerical types | Lenient threshold for comparison |
-| Dentist Effect | All | % improved / unchanged / worsened after verification |
-| Mean Relative Error | Numerical types | Average relative error across all numerical answers |
- 
----
  
 ## Key Findings
  
