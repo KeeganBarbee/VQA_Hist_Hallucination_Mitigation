@@ -81,57 +81,10 @@ Dentist/
 ---
  
 ## Setup
- 
-### 1. Install Ollama
- 
-```bash
-mkdir -p ~/bin
-wget https://github.com/ollama/ollama/releases/download/v0.19.0/ollama-linux-amd64.tar.zst
-tar --use-compress-program=zstd -xf ollama-linux-amd64.tar.zst -C ~/bin bin/ollama --strip-components=1
-chmod +x ~/bin/ollama
 ```
- 
-### 2. Start the Ollama Server
- 
-```python
-import subprocess, os, time
- 
-HOME = os.environ['HOME']
-OLLAMA_PATH = f"{HOME}/bin/ollama"
-env = {
-    **os.environ,
-    "OLLAMA_HOME": f"{HOME}/.ollama",
-    "OLLAMA_HOST": "127.0.0.1:11434",
-    "OLLAMA_NUM_GPU": "99",
-    "LD_LIBRARY_PATH": "/usr/local/cuda/lib64:" + os.environ.get("LD_LIBRARY_PATH", ""),
-}
- 
-subprocess.run(["pkill", "-f", "ollama"], capture_output=True)
-time.sleep(3)
- 
-proc = subprocess.Popen(
-    [OLLAMA_PATH, "serve"],
-    env=env,
-    stdout=open(f"{HOME}/ollama.log", "w"),
-    stderr=subprocess.STDOUT
-)
-time.sleep(8)
+Run ollama.ipynb
 ```
- 
-### 3. Pull Models
- 
-```bash
-ollama pull llava:7b
-ollama pull qwen2.5vl:7b
-```
- 
-### 4. Install Python Dependencies
- 
-```bash
-pip install requests pillow numpy
-```
- 
-### 5. Download the Dataset
+### Download the Dataset
  
 ```python
 from datasets import load_dataset
