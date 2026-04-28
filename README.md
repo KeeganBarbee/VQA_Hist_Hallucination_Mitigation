@@ -167,39 +167,6 @@ Results are saved incrementally to `results.json` after each sample. To test on 
 max_samples = 5    # set to None for full dataset
 ```
  
-### Test a Single Sample
- 
-```python
-import sys
-sys.path.insert(0, '/path/to/Dentist')
- 
-from Dentist.model.Qwen2VL.Qwen2VL_Verifier import Qwen2VL_Verifier
-from PIL import Image
- 
-image    = Image.open("path/to/histogram.jpeg").convert("RGB")
-verifier = Qwen2VL_Verifier(limited_cnt=2)
-question = "How many bars are there in this histogram?"
- 
-baseline = verifier.ask_model(image, question, use_image=True)
-revised  = verifier.verify_loop(image, question, baseline)
- 
-print(f"Baseline: {baseline}")
-print(f"Revised:  {revised}")
-```
- 
-### Verify GPU is Being Used
- 
-```python
-import requests
- 
-r = requests.get("http://localhost:11434/api/ps")
-for m in r.json().get("models", []):
-    print(f"{m['name']}: size_vram={m['size_vram']} bytes")
-    # size_vram > 0 confirms GPU is being used
-```
- 
----
- 
 ## Prompt Engineering
  
 A core contribution of this project is redesigning Dentist's generic prompts for the histogram domain. Four failure modes were identified and addressed:
@@ -308,27 +275,9 @@ When the same model performs both the initial answer and the verification sub-qu
  
 - **Dentist:** *"Hallucination Mitigation in Vision-Language Models via Divide-and-Conquer"*, Transactions on Machine Learning Research, October 2024
 - **Dataset:** [ReadingTimeMachine/visual_qa_histograms](https://huggingface.co/datasets/ReadingTimeMachine/visual_qa_histograms)
-- **LLaVA:** [ollama.com/library/llava](https://ollama.com/library/llava)
-- **Qwen2.5-VL:** [ollama.com/library/qwen2.5vl](https://ollama.com/library/qwen2.5vl)
 - **Ollama:** [ollama.com](https://ollama.com)
 ## Models
 Two open-source vision-language models were evaluated:
 
 LLaVA 7B (llava:7b) — served locally via Ollama
 Qwen2.5-VL 7B (qwen2.5vl:7b) — served locally via Ollama
-
-Both models were run on a machine with an NVIDIA H200 NVL GPU. Inference was handled through Ollama's local HTTP API at http://localhost:11434.
-
-## Code Tree
-```bash
-.
-├── demo.py
-└── Dentist
-    └── model
-        ├── Qwen2VL
-        │   └──Qwen2VL_verifier.py
-        │
-        ├── llava
-        │   └──my_llava_verifier.py
-        │
-        ├── verifier.py
