@@ -104,3 +104,6 @@ def main():
 
 if __name__ == '__main__':
     main()
+"""
+Inspired by Chang, Yue, et al. "A unified hallucination mitigation framework for large vision-language models." arXiv preprint arXiv:2409.16494 (2024).
+"""
