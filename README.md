@@ -148,26 +148,7 @@ The question classifier was updated with histogram-specific examples so that per
  
 ## Evaluation
  
-Run `evaluation.ipynb` after `demo.py` completes. It produces:
- 
-```
-MAIN RESULTS: Accuracy by Model and Question Type
-======================================================================
- 
---- Qwen2VL ---
-  Question Type    Baseline    Revised     Change      N
-  --------------- ---------- ---------- ---------- -----
-  mean               0.xxx      0.xxx     +0.xxx      N
-  ...
-  OVERALL            0.xxx      0.xxx     +0.xxx      N
- 
-DENTIST EFFECT: How often did verification improve/worsen/unchanged?
-======================================================================
-Qwen2VL (n=N):
-  improved    :   XX (XX.X%)
-  unchanged   :   XX (XX.X%)
-  worsened    :   XX (XX.X%)
-```
+Run `evaluation.ipynb` after `demo.py` completes. 
  
 ## Key Findings
  
@@ -203,7 +184,7 @@ When the same model performs both the initial answer and the verification sub-qu
  
 ## References
  
-- **Dentist:** *"Hallucination Mitigation in Vision-Language Models via Divide-and-Conquer"*, Transactions on Machine Learning Research, October 2024
+- **Dentist:** Chang, Yue, et al. "A unified hallucination mitigation framework for large vision-language models." arXiv preprint arXiv:2409.16494 (2024).
 - **Dataset:** [ReadingTimeMachine/visual_qa_histograms](https://huggingface.co/datasets/ReadingTimeMachine/visual_qa_histograms)
 - **Ollama:** [ollama.com](https://ollama.com)
 ## Models
